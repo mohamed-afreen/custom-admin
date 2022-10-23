@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit user</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+<body>
+
+    <!-- {{form.as_p}} -->
+
+    <div style="    width: 80%;
+     margin-left: 150px;
+     margin-top: 55px;">
+
+        <form action="" method = "POST">
+         {% csrf_token %}
+         
+          <div class="row">
+             <div class="col-md-6 mb-4">
+               <div class="form-outline">
+                 <input type="text" value="{{user_list.first_name}}" name="first_name" id="form3Example1" class="form-control"/>
+                <label class="form-label" for="form3Example1">First name</label>
+              </div>
+             </div>
+             <div class="col-md-6 mb-4">
+                <div class="form-outline">
+                  <input type="text" value="{{user_list.last_name}}" name="last_name" id="form3Example2" class="form-control"/>
+                  <label class="form-label" for="form3Example2">Last name</label>
+                </div>
+             </div>
+          </div>
+
+          <!-- username input -->
+          <div class="form-outline mb-4">
+             <input type="text" value="{{user_list.username}}" name="username" id="form3Example3" class="form-control"/>
+             <label class="form-label" for="form3Example3">Username</label>
+           </div>
+
+         <!-- email input -->
+         <div class="form-outline mb-4">
+           <input type="email" value="{{user_list.email}}" name="email" id="form3Example3" class="form-control"/>
+           <label class="form-label" for="form3Example3">Email address</label>
+         </div>
+
+         <a href="/custom_admin/edit_user"><input type="submit" value="update" class="btn btn-secondary"></a>
+        </form>
+    </div>
+
+         <!-- Submit button -->
+         <!-- <button type="submit" value="update" class="btn btn-secondary btn-block mb-4">
+            Make changes
+         </button> -->
+
+         <!-- {% for message in messages %}
+              <div class="alert
+              alert-warning
+              alert-dismissible fade show
+              " role="alert">
+                {{message}} 
+              </div>
+           {% endfor %} -->
+    
+
+
+    
+</body>
+</html>
